@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
 	horas = minutos / 60;
 	
 	
-	// valores diferentes mostrados na tela de acordo com a resposta do usuario
+	// valores diferentes mostrados na tela de acordo com a resposta do usuario.
 	if(minutos > 15){
 		printf("\nVoce deve pagar R$%.2f", horas*3);
 	}
