@@ -8,10 +8,10 @@ int main ()
 	float indice; // declara a variavel a ser lida
 	
 	
-	printf("Digite o indice de poluiÁ„o:\n");
-	scanf("%f", &indice); // lÍ o valor do usu·rio e atribui a variavel indice
+	printf("Digite o indice de polui√ß√£o:\n");
+	scanf("%f", &indice); // l√™ o valor do usu√°rio e atribui a variavel indice
 	
-	// condiÁıes de acordo com a resposta do usu·rio
+	// condi√ß√µes de acordo com a resposta do usu√°rio
 	if (indice >= 0.5) {
 		printf("Indice %.2f --> Todas as empresas dos 3 grupos devem suspender as atividades", indice);
 	}
@@ -22,7 +22,7 @@ int main ()
 		printf("Indice %.2f --> Empresas do grupo 1 devem suspender as atividades", indice);
 	}
 	else if (indice >= 0.05 && indice <= 0.25){
-		printf("Indice %.2f --> Aceit·vel!! :D");
+		printf("Indice %.2f --> Aceit√°vel!! :D");
 	}
 	else{
 		printf("Desculpe. Esse nao eh um valor aceitavel.");
