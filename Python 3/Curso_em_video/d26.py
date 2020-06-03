@@ -1,0 +1,6 @@
+a1=input('Digite uma frase qualquer')
+a2=a1.upper()
+a3=a2.count('A',0,9999)
+a4=a2.find('A')
+a5=a2.rfind('A')
+print(f"""A letra "a" aparece {a3} vezes, aparecendo pela primeira vez no caracter de número {a4} e pela última no caracter {a5}""")

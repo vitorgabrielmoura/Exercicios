@@ -1,0 +1,6 @@
+banana;
+janela;
+paralelepipedo;
+biblia;
+teclado;
+computador;
