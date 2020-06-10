@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+/* Escreva um algoritmo que solicite ao usuário a entrada de 5 números, e que exiba a somatória desses números na tela. 
+Após exibir a soma, o programa deve mostrar também os números que o usuário digitou, um por linha. */
 
 int main(int argc, char *argv[]) {
 	

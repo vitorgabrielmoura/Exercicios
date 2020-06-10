@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+/* CRIE UM PROGRAMA QUE CALCULA O VALOR A SER PAGO EM UM ESTACIONAMENTO DE ACORDO COM A TABELA ABAIXO:
+ATE 15 MINUTOS: GRATIS
+ACIMA DE 15 MINUTOS: 3,00 POR HORA
+ACIMA DE 10 horas: 30,00 valor único
+INFORME O TEMPO EM **MINUTOS** */
 
 int main(int argc, char *argv[]) {
 	

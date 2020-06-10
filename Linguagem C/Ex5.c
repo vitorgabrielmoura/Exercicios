@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+/* Escreva um algoritmo que solicite ao usuário a entrada de 5 nomes, e que exiba a lista desses nomes na tela. Após exibir 
+essa lista, o programa deve mostrar também os nomes na ordem inversa em que o usuário os digitou, um por linha */
 
 int main(int argc, char *argv[]) {
 	
