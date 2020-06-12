@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Leia 8 elementos em um vetor inteiro A. Construa outro vetor B, da mesma dimensão de A, com seus elementos sendo a multiplicação
-dos elementos de A por 3. Mostre os elementos de B. b[0] = a[0] * 3 */
+/* Leia 8 elementos em um vetor inteiro A. Construa outro vetor B, da mesma dimensão de A, com seus 
+elementos sendo a multiplicaçãodos elementos de A por 3. Mostre os elementos de B. b[0] = a[0] * 3 */
 
 int main(int argc, char *argv[]) {
 	

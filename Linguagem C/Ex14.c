@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Leia dois vetores A e B inteiros, da mesma dimensão. Construa o vetor C, de mesma dimensão, cujo elementos de C é a subtração dos
-elementos de A por B. Mostre o vetor C. c[0] = a[0] - b[0] */
+/* Leia dois vetores A e B inteiros, da mesma dimensão. Construa o vetor C, de mesma 
+dimensão, cujo elementos de C é a subtração dos elementos de A por B. Mostre o 
+vetor C. c[0] = a[0] - b[0] */
 
 int main(int argc, char *argv[]) {
 	

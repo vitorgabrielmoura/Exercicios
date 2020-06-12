@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-/* Sortear 1000 números inteiros e armazenar em um vetor. Percorrer o vetroe e encontrar o menor elemento. */
+/* Sortear 1000 números inteiros e armazenar em um vetor. 
+Percorrer o vetor e e encontrar o menor elemento. */
 
 int main(int argc, char *argv[]) {
 	
