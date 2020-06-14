@@ -5,16 +5,18 @@
 
 int main(int argc, char *argv[]) {
 	
-	int i, vetor[15];
+	int i;
+	char vetor[15];
 	
 	for(i=0; i < 15; i++){
-		printf("Digite o %d numero: ", i+1);
-		scanf("%d", &vetor[i]);
+		printf("Digite o %d caracter: ", i+1);
+		fflush(stdin);
+		scanf("%c", &vetor[i]);
 	}
 	
 	printf("\nVALORES DIGITADOS EM ORDEM REVERSA\n");
-	for(i=14; i >= 0; i--){
-		printf("\n%d\n", vetor[i]);
+	for(i=15; i >= 0; i--){
+		printf("\n%c", vetor[i]);
 	}
 	
 	return 0;
