@@ -3,9 +3,9 @@
 
 /* *Construir um algoritmo que leia em um vetor os modelos de cinco carros (Ex: Fusca, Gol, Vectra, etc). Guardar apenas o primeiro
 caractere do modelo, por exemplo: f, g, v, etc.
-* leia outro vetor com o consumo desses carros, isto é, quantos km cada um desses carros faz com 1 litro de combustível. Calcule e mostre:
-- O modelo do carro mais econômica
-- Quantos litros de combustível cada um dos carros cadastrados consome para percorrer uma distancia de 1000 km. */
+* leia outro vetor com o consumo desses carros, isto Ã©, quantos km cada um desses carros faz com 1 litro de combustÃ­vel. Calcule e mostre:
+- O modelo do carro mais econÃ´mica
+- Quantos litros de combustÃ­vel cada um dos carros cadastrados consome para percorrer uma distancia de 1000 km. */
 
 int main(int argc, char *argv[]) {
 	
@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
 		if (i == 0){
 			menor = carros[i];
 		}
-		if (consumo[i] < menor){
+		if (consumo[i] > menor){
 			economico = carros[i];
 		}
 	}
