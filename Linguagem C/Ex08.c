@@ -1,34 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* CRIE UM PROGRAMA QUE CALCULA O VALOR A SER PAGO EM UM ESTACIONAMENTO DE ACORDO COM A TABELA ABAIXO:
-ATE 15 MINUTOS: GRATIS
-ACIMA DE 15 MINUTOS: 3,00 POR HORA
-ACIMA DE 10 horas: 30,00 valor único
-INFORME O TEMPO EM **MINUTOS** */
+/* Desenvolva uma simulação de uma calculadora básica */
 
 int main(int argc, char *argv[]) {
+	int i, opc;
+	float num1, num2;
 	
-	float minutos, horas; // declara as diversas variaveis
+	do{	
+	printf("\nDigite o primeiro numero: ");
+	scanf("%f", &num1);
+	
+	printf("Digite o primeiro numero: ");
+	scanf("%f", &num2);
+	
+	printf("\nDigite a opcao desejada:\n\n[1]Soma\n[2]Subtracao\n[3]Multiplicacao\n[4]Divisao\n[5]Sair\n");
+	scanf("%d", &opc);
 	
 	
-	// lê o quanto de tempo a pessoa passou no estacionamento
-	printf("Digite o tempo em que voce passou no estacionamento (em min): ");
-	scanf("%f", &minutos);
-	horas = minutos / 60;
-	
-	
-	// valores diferentes mostrados na tela de acordo com a resposta do usuario.
-	if(minutos > 15){
-		printf("\nVoce deve pagar R$%.2f", horas*3);
+	switch(opc){
+		case 1: printf("----> %.1f + %.1f = %.1f\n", num1, num2, num1+num2);break;
+		case 2: printf("----> %.1f - %.1f = %.1f\n", num1, num2, num1-num2);break;
+		case 3: printf("----> %.1f * %.1f = %.1f\n", num1, num2, num1*num2);break;
+		case 4: printf("----> %.1f / %.1f = %.1f\n", num1, num2, num1/num2);break;
+		case 5: printf("Ate mais!\n");break;
 	}
-	else if (horas > 10){
-		printf("\nVoce deve pagar R$30.00");
-	}
-	else{
-		printf("\nVoce nao deve pagar nada!");
-	}
 	
+	}while(opc != 5);
 	
 	return 0;
 }

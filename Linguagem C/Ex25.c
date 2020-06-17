@@ -1,41 +1,49 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <ctype.h>//biblioteca p/ as funções isalpha isdigit toupper tolower
+#include <string.h>
 
-/* Faça um programa que crie um vetor de pessoas. Os dados de uma pessoa devem ser armazenados em um variavel do tipo struct. 
-O programa deve permitir que o usuário digite o nome de 3 pessoas e a seguir imprimi os dados de todas as pessoas. A struct deve 
-armazenar os dados de idade, peso e altura. */
+/* Crie um progama capaz de ler dois nomes de pessoas e imprimi-los em ordem alfabética. */
 
-struct dados_pessoas{
-	char nome[50];
-	int idade;
-	float peso, altura;
-};
-
-int main(int argc, char *argv[]) {
-	struct dados_pessoas pessoa[3];
+void LOwer(char vetor[2][30], int pos){
 	int i;
 	
-	for(i=0; i< 3; i++){
-		printf("\n\nNome da pessoa %d: ", i+1);
-		fflush(stdin);
-		gets(pessoa[i].nome);
-		
-		printf("Idade: ");
-		scanf("%d", &pessoa[i].idade);
-		
-		printf("Peso: ");
-		scanf("%f", &pessoa[i].peso);
-		
-		printf("Altura: ");
-		scanf("%f", &pessoa[i].altura);
+	for(i=0; i < strlen(vetor[pos]); i++){
+		vetor[pos][i] = tolower(vetor[pos][i]);
+		return (vetor[pos][i]);
+	}	
+}
+
+int main(int argc, char *argv[]) {
+	
+	int i, cmp, len;
+	char nome[2][30];
+	
+	
+	for(i=0; i < 2; i++){
+		printf("Digite o %d nome: ", i+1);
+		gets(nome[i]);
 	}
 	
-	for(i=0; i< 3; i++){
-		printf("\n\nNome... %s: ", pessoa[i].nome);
-		printf("\nIdade... %d", pessoa[i].idade);
-		printf("\nPeso... %.1f kg", pessoa[i].peso);
-		printf("\nAltura... %.1fm", pessoa[i].altura);
-	}
+	/* lower the characters for name 1 and 2*/
+	LOwer(nome, 0);
+	LOwer(nome, 1);
 	
+	printf("\nOs nomes digitados em ordem alfabetica sao:");
+	for(i=0; i< 1; i++){
+		cmp = strcmp(nome[0], nome[1]);
+		if(cmp < 0){
+			printf("\n1. %s", nome[0]);
+			printf("\n2. %s", nome[1]);
+			break;
+		}
+		if(cmp > 0){
+			printf("\n1. %s", nome[1]);
+			printf("\n2. %s", nome[0]);
+			break;
+		}
+	}
+
 	return 0;
 }

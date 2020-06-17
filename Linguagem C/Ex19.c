@@ -1,49 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-#include <ctype.h>//biblioteca p/ as funções isalpha isdigit toupper tolower
-#include <string.h>
 
-/* Crie um progama capaz de ler dois nomes de pessoas e imprimi-los em ordem alfabética. */
-
-void LOwer(char vetor[2][30], int pos){
-	int i;
-	
-	for(i=0; i < strlen(vetor[pos]); i++){
-		vetor[pos][i] = tolower(vetor[pos][i]);
-		return (vetor[pos][i]);
-	}	
-}
+/* Leia 8 elementos em um vetor inteiro A. Construa outro vetor B, da mesma dimensão de A, com seus 
+elementos sendo a multiplicaçãodos elementos de A por 3. Mostre os elementos de B. b[0] = a[0] * 3 */
 
 int main(int argc, char *argv[]) {
 	
-	int i, cmp, len;
-	char nome[2][30];
+	int i, vetorA[8], vetorB[8];
 	
-	
-	for(i=0; i < 2; i++){
-		printf("Digite o %d nome: ", i+1);
-		gets(nome[i]);
+	for(i=0; i < 8; i++){
+		printf("Digite o %d numero: ", i+1);
+		scanf("%d", &vetorA[i]);
+		vetorB[i] = vetorA[i] * 3;
 	}
 	
-	/* lower the characters for name 1 and 2*/
-	LOwer(nome, 0);
-	LOwer(nome, 1);
-	
-	printf("\nOs nomes digitados em ordem alfabetica sao:");
-	for(i=0; i< 1; i++){
-		cmp = strcmp(nome[0], nome[1]);
-		if(cmp < 0){
-			printf("\n1. %s", nome[0]);
-			printf("\n2. %s", nome[1]);
-			break;
-		}
-		if(cmp > 0){
-			printf("\n1. %s", nome[1]);
-			printf("\n2. %s", nome[0]);
-			break;
-		}
+	printf("\nVALORES DO VETOR B\n");
+	for(i=0; i < 8; i++){
+		printf("\n%d. %d ", i+1, vetorB[i]);
 	}
-
 	return 0;
 }

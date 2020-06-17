@@ -1,53 +1,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Crie uma função capaz de multiplicar uma linha de uma matriz por um dado número. Faça o mesmo para uma coluna. */
-
-
-int pegaDados(char dado[10]){
-	int dados;
-	
-	printf("Qual %s voce quer multiplicar? :", dado);
-	scanf("%d", &dados);
-	return (dados);
-}
+/* *Construir um algoritmo que leia em um vetor os modelos de cinco carros (Ex: Fusca, Gol, Vectra, etc). Guardar apenas o primeiro
+caractere do modelo, por exemplo: f, g, v, etc.
+* leia outro vetor com o consumo desses carros, isto é, quantos km cada um desses carros faz com 1 litro de combustível. Calcule e mostre:
+- O modelo do carro mais econômica
+- Quantos litros de combustível cada um dos carros cadastrados consome para percorrer uma distancia de 1000 km. */
 
 int main(int argc, char *argv[]) {
-	int l, c, matriz[3][3];
-	int mult1, mult2, linha, multlinha, coluna, multcoluna;	
 	
-	for(l=0; l< 3; l++){
-		for(c=0; c< 3; c++){
-			printf("Digite um numero para a matriz na linha %d e coluna %d ", l, c);
-			scanf("%d", &matriz[l][c]);
-		}	
+	char carrostd[5][20], carros[5], economico;
+	int i;
+	float consumo[5], menor;
+	
+	for(i=0; i< 5; i++){
+		printf("\nDigite o modelo do carro n %d: ", i+1);
+		scanf("%s", &carrostd[i]);
+		carros[i] = carrostd[i][0];
+		printf("Qual o consumo desse carro? KM/1L : ");
+		scanf("%f", &consumo[i]);
+		if (i == 0){
+			menor = carros[i];
+		}
+		if (consumo[i] < menor){
+			economico = carros[i];
+		}
 	}
 	
-	printf("\n");
-	linha = pegaDados("linha");
-	multlinha = pegaDados("numero");
+	printf("\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n                FIM\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+	printf("\n\nModelo mais economico: %c", economico);
+	printf("\n\nLITROS NECESSARIOS PARA PERCORRER 1000 KM:\n");
 	
-	coluna = pegaDados("coluna");
-	multcoluna = pegaDados("numero");
-	
-	printf("\n  MATRIZ\n\n");
-	for(l=0; l< 3; l++){
-		if (l == linha){
-			mult1 = multlinha;
-		}
-		else{
-			mult1 = 1;
-		}
-		for(c=0; c< 3; c++){
-			if (c== coluna){
-				mult2 = multcoluna;
-			}
-			else{
-				mult2 = 1;
-			}
-			printf(" %d  ", matriz[l][c]*mult1*mult2);
-		}
-	printf("\n");
+	for(i=0; i< 5; i++){
+		printf("\nCarro %c - %.1fL", carros[i], 1000/consumo[i]);
 	}
+	
+	
 	return 0;
 }

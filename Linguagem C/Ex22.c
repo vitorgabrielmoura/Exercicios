@@ -1,33 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
-/* Crie uma função capaz de criar a transposta de uma matriz. */
-
-void transporMatriz(int matriz[3][3]){
-	int l, c, matriztransposta[3][3];	
-	
-	for(l=0; l< 3; l++){
-		for(c=0; c< 3; c++){
-			printf("Digite um numero para a matriz na linha %d e coluna %d ", l, c);
-			scanf("%d", &matriz[l][c]);
-		}	
-	}
-
-	printf("\nMATRIZ TRANSPOSTA\n\n");
-	for(l=0; l< 3; l++){
-		for(c=0; c< 3; c++){
-			matriztransposta[l][c] = matriz[c][l];
-			printf("%d  ", matriztransposta[l][c]);
-		}
-		printf("\n");
-	}	
-}
+/* Sortear 1000 números inteiros e armazenar em um vetor. 
+Percorrer o vetor e e encontrar o menor elemento. */
 
 int main(int argc, char *argv[]) {
-	int matriz[3][3];
 	
-	transporMatriz(matriz);
+	int i, vetor[1000], menor;
+	srand(time(NULL));
 	
-
+	for(i=0; i < 1000; i++){
+		vetor[i] = rand() % 1000;
+		if(i == 0){
+			menor = vetor[i];
+		}
+		if(vetor[i] < menor){
+			menor = vetor[i];
+		}
+	}
+	
+	printf("O menor valor encontrado foi %d", menor);
+	
 	return 0;
 }

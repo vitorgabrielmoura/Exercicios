@@ -1,28 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Crie um programa capaz de criar a transposta de uma matriz. A matriz deve ser lida de teclado. */
-
+/* Leia dois vetores reais A (de tamanho 4) e B (de tamanho 7). Construa um 3ª vetor que seja a junção de A e B 
+(colocar os elementos de A seguidos dos elementos de B) */
 
 int main(int argc, char *argv[]) {
 	
-	int l, c, matriz[3][3], matriztransposta[3][3];	
+	float vetorA[4], vetorB[7], vetorC[11];
+	int i;
 	
-	for(l=0; l< 3; l++){
-		for(c=0; c< 3; c++){
-			printf("Digite um numero para a matriz na linha %d e coluna %d ", l, c);
-			scanf("%d", &matriz[l][c]);
-		}	
-	}
-
-	printf("\nMATRIZ TRANSPOSTA\n\n");
-	for(l=0; l< 3; l++){
-		for(c=0; c< 3; c++){
-			matriztransposta[l][c] = matriz[c][l];
-			printf("%d  ", matriztransposta[l][c]);
+	for(i=0; i < 7; i++){
+		if(i < 4){
+			printf("\nDigite o %d numero para o vetorA: ", i+1);
+			scanf("%f", &vetorA[i]);
+			vetorC[i] = vetorA[i];
 		}
-		printf("\n");
+		printf("Digite o %d numero para o vetorB: ", i+1);
+		scanf("%f", &vetorB[i]);
+		vetorC[i+4] = vetorB[i];
 	}
-
+	
+	printf("\nVALORES DO VETOR C\n");
+	for(i=0; i < 11; i++){
+		printf("\n%d. %.1f ", i+1, vetorC[i]);
+	}
+	
 	return 0;
 }

@@ -1,21 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
-/* Leia 10 valores inteiros e armazene-os em um Vetor. Em seguida, imprima todos os elementos. */
+/* Faça um algoritimo que cacule a fórmula de bhaskara */
 
 int main(int argc, char *argv[]) {
+	int a, b, c;
+	float delta, x1, x2;
 	
-	int i, vetor[9];
+	a = 2;
+	b = 12;
+	c = -14;
 	
-	for(i=0; i < 10; i++){
-		printf("Digite o %d numero: ", i+1);
-		scanf("%d", &vetor[i]);
+	delta = b*b - (4*a*c);
+	
+	if (delta <= 0){
+		printf("Delta menor que 0. Nao existem raizes.");
+	}
+	else{
+		x1 = (-b + sqrt(delta))/(2*a);
+		x2 = (-b - sqrt(delta))/(2*a);
+		printf("Raízes da equação:\nx1: %.1f\nx2: %.1f", x1, x2);
 	}
 	
-	printf("\nVALORES DIGITADOS:\n");
-	for(i=0; i< 10; i++){
-		printf("\n%d", vetor[i]);
-	}
 	
 	return 0;
 }

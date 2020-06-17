@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Crie um programa  capaz de multiplicar uma linha de uma matriz de inteiros por um dado número. Faça o mesmo para uma coluna. A matriz deve ser lida de teclado. */
+/* Crie uma função capaz de multiplicar uma linha de uma matriz por um dado número. Faça o mesmo para uma coluna. */
+
 
 int pegaDados(char dado[10]){
 	int dados;
@@ -12,7 +13,6 @@ int pegaDados(char dado[10]){
 }
 
 int main(int argc, char *argv[]) {
-	
 	int l, c, matriz[3][3];
 	int mult1, mult2, linha, multlinha, coluna, multcoluna;	
 	
@@ -49,6 +49,5 @@ int main(int argc, char *argv[]) {
 		}
 	printf("\n");
 	}
-
 	return 0;
 }

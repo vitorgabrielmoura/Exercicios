@@ -1,26 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Leia dois vetores A e B inteiros, da mesma dimensão. Construa o vetor C, de mesma 
-dimensão, cujo elementos de C é a subtração dos elementos de A por B. Mostre o 
-vetor C. c[0] = a[0] - b[0] */
+/* CRIE UM PROGRAMA QUE CALCULA O VALOR A SER PAGO EM UM ESTACIONAMENTO DE ACORDO COM A TABELA ABAIXO:
+ATE 15 MINUTOS: GRATIS
+ACIMA DE 15 MINUTOS: 3,00 POR HORA
+ACIMA DE 10 horas: 30,00 valor único
+INFORME O TEMPO EM **MINUTOS** */
 
 int main(int argc, char *argv[]) {
 	
-		int i, vetorC[4], vetorB[4], vetorA[4];
+	float minutos, horas; // declara as diversas variaveis
 	
-	for(i=0; i < 4; i++){
-		printf("\nDigite o %d numero para o vetorA: ", i+1);
-		scanf("%d", &vetorA[i]);
-		printf("Digite o %d numero para o vetorB: ", i+1);
-		scanf("%d", &vetorB[i]);
-		vetorC[i] = vetorA[i] - vetorB[i];
+	
+	// lê o quanto de tempo a pessoa passou no estacionamento
+	printf("Digite o tempo em que voce passou no estacionamento (em min): ");
+	scanf("%f", &minutos);
+	horas = minutos / 60;
+	
+	
+	// valores diferentes mostrados na tela de acordo com a resposta do usuario.
+	if(minutos > 15){
+		printf("\nVoce deve pagar R$%.2f", horas*3);
+	}
+	else if (horas > 10){
+		printf("\nVoce deve pagar R$30.00");
+	}
+	else{
+		printf("\nVoce nao deve pagar nada!");
 	}
 	
-	printf("\nVALORES DO VETOR C\n");
-	for(i=0; i < 4; i++){
-		printf("\n%d. %d ", i+1, vetorC[i]);
-	}
 	
 	return 0;
 }

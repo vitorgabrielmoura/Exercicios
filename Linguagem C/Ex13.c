@@ -1,22 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Leia 8 elementos em um vetor inteiro A. Construa outro vetor B, da mesma dimensão de A, com seus 
-elementos sendo a multiplicaçãodos elementos de A por 3. Mostre os elementos de B. b[0] = a[0] * 3 */
+/* Faça um algoritmo que copie o conteúdo de um vetor em um segundo vetor. */
 
 int main(int argc, char *argv[]) {
 	
-	int i, vetorA[8], vetorB[8];
+	float vetorA[5], vetorB[5];  // declara as diversas variaveis, sendo dois deles vetores
+	int i, count = 0;
 	
-	for(i=0; i < 8; i++){
-		printf("Digite o %d numero: ", i+1);
-		scanf("%d", &vetorA[i]);
-		vetorB[i] = vetorA[i] * 3;
+	// laço de repetição que lê 5 números e armazena eles na variavel vetorA, e logo após
+	// esse valor é copiado para o vetorB na mesma posição do vetor A
+	for (i=0; i <=4; i++){
+		printf("Digite um numero para a posicao %d do vetor A: ", i+1);
+		scanf("%f", &vetorA[i]);
+		vetorB[i] = vetorA[i];
 	}
 	
-	printf("\nVALORES DO VETOR B\n");
-	for(i=0; i < 8; i++){
-		printf("\n%d. %d ", i+1, vetorB[i]);
-	}
+	// laço de repetição que mostra todos os valores do vetorB e A, até todos se esgotarem
+	do{
+		printf("\nVetorA: %.1f - Vetor B: %.1f", vetorA[count], vetorB[count]);
+		count ++;
+	} while (count != 5);
+	
+	
 	return 0;
 }

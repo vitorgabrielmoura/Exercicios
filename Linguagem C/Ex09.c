@@ -1,28 +1,38 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Crie um programa capaz de ler os dados de uma matriz quadrada de inteiros. Ao final da leitura o programa deverá imprimir o número 
-da linha que contém o menor dentre todos os números lidos. */
+/* Desenvolva uma algoritimo que calcule o IMC de um paciente */
 
 int main(int argc, char *argv[]) {
+	float peso, altura;
+	float imc;
 	
-	int matriz[3][3]; // o primeiro 2 é o numero de linhas e o segundo, colunas, nesse caso matriz 2x2
-	int l, c;
-	int menor, lmenor;
+	printf("Qual seu peso em kg?: ");
+	scanf("%f", &peso);
 	
-	for(l=0; l<3; l++){
-		printf("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\nLINHA %d \n", l);
-		for(c=0; c<3; c++){
-			printf("Digite um valor inteiro para a coluna %d:", c);
-			scanf("%d", &matriz[l][c]);
-			if (l == 0 && c == 0){
-				menor = matriz[l][c];
-			}
-			if (matriz[l][c] < menor){
-				lmenor = l;
-			}
-		}
+	printf("Qual sua altura em m?: ");
+	scanf("%f", &altura);
+	
+	imc = peso/(altura*altura);
+	
+	if(imc > 40){
+		printf("\nIMC de %.1f - OBESIDADE MORBIDA GRAU III", imc);
 	}
-	printf("\nO menor valor digitado pode ser encontrado na linha %d", lmenor);
+	else if(imc > 35){
+		printf("\nIMC de %.1f - OBESIDADE GRAU II", imc);
+	}
+	else if(imc > 30){
+		printf("\nIMC de %.1f - OBESIDADE GRAU I", imc);
+	}
+	else if(imc > 25){
+		printf("\nIMC de %.1f - LEVEMENTE ACIMA DO PESO", imc);
+	}
+	else if(imc > 18.6){
+		printf("\nIMC de %.1f - PESO IDEAL", imc);
+	}
+	else{
+		printf("\nIMC de %.1f - ABAIXO DO PESO", imc);
+	}
+	
 	return 0;
 }
