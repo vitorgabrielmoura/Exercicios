@@ -4,7 +4,7 @@
 /* Crie uma função capaz de criar a transposta de uma matriz. */
 
 void transporMatriz(int matriz[][3], int n){
-	int l, c;	
+	int l, c, matriztransposta[3][3];	
 	
 	for(l=0; l< n; l++){
 		for(c=0; c< 3; c++){
