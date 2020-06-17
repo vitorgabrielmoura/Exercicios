@@ -20,9 +20,9 @@ int main(int argc, char *argv[]) {
 		printf("Qual o consumo desse carro? KM/1L : ");
 		scanf("%f", &consumo[i]);
 		if (i == 0){
-			menor = carros[i];
+			menor = consumo[i];
 		}
-		if (consumo[i] < menor){
+		if (consumo[i] > menor){
 			economico = carros[i];
 		}
 	}
